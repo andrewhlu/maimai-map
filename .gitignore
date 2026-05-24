@@ -1,0 +1,20 @@
+# Local secrets — never commit
+.env
+.env.local
+
+# Geocoder caches (regenerable, but bulky and provider-specific)
+geocode.cache.json
+google.cache.json
+
+# Node tooling, in case anyone adds it later
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.claude/

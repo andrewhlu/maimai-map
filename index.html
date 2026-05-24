@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SEGA rhythm-game arcades</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <line id="menu-line-1" x1="3" y1="6"  x2="21" y2="6"  />
+      <line id="menu-line-2" x1="3" y1="12" x2="21" y2="12" />
+      <line id="menu-line-3" x1="3" y1="18" x2="21" y2="18" />
+    </svg>
+  </button>
+
+  <div id="panel">
+    <h1>SEGA rhythm-game arcades</h1>
+    <div class="stats" id="stats">Loading…</div>
+    <div class="scraped" id="scraped"></div>
+
+    <div class="section" id="source-section" style="display:none">
+      <div class="section-title">Coordinate source</div>
+      <label><input type="radio" name="source" value="sega" checked> SEGA original</label>
+      <label><input type="radio" name="source" value="geocoded"> Nominatim-geocoded</label>
+      <div id="source-stats" style="font-size:11px;color:#888;margin-top:4px"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Country</div>
+      <select id="country-select"><option value="">All</option></select>
+      <select id="pref-select" style="display:none"><option value="">All prefectures</option></select>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Games</div>
+      <label><input type="checkbox" class="game-toggle" value="maimai" checked> maimai DX (Japan)</label>
+      <label><input type="checkbox" class="game-toggle" value="maimai_intl" checked> maimai DX International</label>
+      <label><input type="checkbox" class="game-toggle" value="maimai_cn" checked> maimai DX (China)</label>
+      <label><input type="checkbox" class="game-toggle" value="chunithm" checked> CHUNITHM (Japan)</label>
+      <label><input type="checkbox" class="game-toggle" value="chunithm_intl" checked> CHUNITHM International</label>
+      <label><input type="checkbox" class="game-toggle" value="chunithm_cn" checked> CHUNITHM (China)</label>
+      <label><input type="checkbox" class="game-toggle" value="ongeki" checked> Ongeki</label>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Legend</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:var(--maimai)"></span>maimai</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:var(--chunithm)"></span>CHUNITHM</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:var(--ongeki)"></span>Ongeki</div>
+    </div>
+
+    <div class="section">
+      <button id="locate-btn">📍 Show my location</button>
+      <div id="locate-status"></div>
+    </div>
+
+    <div class="section sources">
+      <div class="section-title">Sources</div>
+      <div id="sources"></div>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js" crossorigin=""></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
