@@ -27,7 +27,6 @@ const COUNTRY_CODE = 1100;
 //   pinyin   — English/pinyin name used in arcade.prefecture
 //   centroid — [lat, lon] in WGS-84, used as the no-match geocode fallback
 // Centroids are public reference values (province administrative center).
-// Tibet/Xizang is omitted because no Wahlap arcades are listed there.
 const PROVINCES = {
   '北京':   { pinyin: 'Beijing',        centroid: [39.9042, 116.4074] },
   '上海':   { pinyin: 'Shanghai',       centroid: [31.2304, 121.4737] },
@@ -59,6 +58,7 @@ const PROVINCES = {
   '甘肃':   { pinyin: 'Gansu',          centroid: [37.8099, 101.5639] },
   '宁夏':   { pinyin: 'Ningxia',        centroid: [37.2692, 106.1709] },
   '青海':   { pinyin: 'Qinghai',        centroid: [35.7452, 95.9956] },
+  '西藏':   { pinyin: 'Tibet',          centroid: [29.6520, 91.1721] },
 };
 
 async function fetchEndpoint(url) {
